@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 function RatingFilter({onChangeRating =()=>{}, count=0}) {
     return (
         <div className='searchRating'>
-            <p style={{textDecoration:'underline'}}> <strong>Min Rating</strong></p>
+            <p> <strong>Min Rating</strong></p>
             <Rating             
             count={count} 
             onChangeRate={(newRating)=>onChangeRating(newRating)}
@@ -26,8 +26,7 @@ const mapDispatchToProps = dispatch =>{
             dispatch({
                 type:'SET_RATING_FILTER',
                 rating:newRating
-            })
-            
+            })            
         }
     }
 }

@@ -54,12 +54,13 @@ span{
    display: flex;
    align-items: center;
    padding-top: 20px;
+   
      
 }
 .btn{
   height: 56px;
   background-color: rgb(17, 16, 16);
-  color: goldenrod;
+  color: chartreuse;
   cursor: pointer;
   border: .2px solid goldenrod;
   border-radius: 49%;
@@ -68,8 +69,10 @@ span{
 .btn:hover{
   background-color: goldenrod;
   color: rgb(17, 16, 16);
-  transition: .5s;
-  
+  transition: .5s;  
+}
+.btn:focus{
+  outline: 0;
 }
 h2{
   color: chartreuse;
@@ -88,17 +91,25 @@ h3{
   width: 75px;
   margin: 20px 10px 0 ;
   padding: 5px;
-  background-color: gold;
+  background-color: black;
   border-radius: 10px;
-  border: 1px solid black;
-  font-size: 15px;
+  border: 1px solid goldenrod;
+  color: goldenrod;
+  font-size: 13px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
 }
 .btn-change:hover{
-  background-color: black;
-  color: gold;
+  background-color: gold; 
+  color: black;
   cursor: pointer;
 }
 .btn-change:focus{
   outline: 0;
+}
+em{
+  color: rgb(156, 138, 33)
+}
+.description{
+  text-align: center;
+  margin-top: 100px
 }

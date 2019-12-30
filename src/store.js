@@ -19,16 +19,16 @@ const moviesReducer = (state = [], action) => {
         return state.concat(action.movie)
     }
     if(action.type === 'EDIT_MOVIE') {
-        return state.map(m => {
-            if(m.id === action.id) {
+        return state.map(el => {
+            if(el.id === action.id) {
                 return action.movie
             }
-            return m
+            return el
         })
     }
     if(action.type === 'DELETE_MOVIE') {
-        return state.filter(m => {
-            if(m.id === action.id) {
+        return state.filter(el => {
+            if(el.id === action.id) {
                 return false
             }
             return true
@@ -42,25 +42,32 @@ const store = createStore(combineReducers({
     minRatingFilter: ratingFilterReducer,
     titleFilter: titleFilterReducer
 }))
+
+
 /* test */
 
-
-
 const fast =  {
-        id:'fast',
-        title: "Fast Furious",
-        year: "2013",
-        link: " http://bit.do/fk8TU",
-        rating: 3
-      }
+    id: Math.random(),
+    title: "Fast Furious",
+    year: "2013",
+    link: " http://bit.do/fk8TU",
+    rating: 3
+}
 
-      const ater = {
-            id:'ater',
-            title: "Artemis Fowl",
-            year: "2016",
-            link: " http://bit.do/fmfAY",
-            rating: 5
-          }
+const ater = {
+    id: Math.random(),
+    title: "Artemis Fowl",
+    year: "2016",
+    link: " http://bit.do/fmfAY",
+    rating: 5
+}
+const jocker = {
+    id: Math.random(),
+    title: "jocker",
+    year: "2019",
+    link: " http://bit.do/fnt2w",
+    rating: 4
+}
 
 
       store.dispatch({
@@ -73,6 +80,12 @@ const fast =  {
         movie: ater
 
       }) 
+
+      store.dispatch({
+        type: 'ADD_MOVIE',
+        movie: jocker
+
+      })
 
 
 export default store
